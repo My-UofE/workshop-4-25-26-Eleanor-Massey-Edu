@@ -12,26 +12,36 @@ public class Rectangle {
 
   // main constructor
   public Rectangle(double w, double h, double oX, double oY) {
-    width = w;
-    height = h;
-    originX = oX;
-    originY = oY;
+    this.width = w;
+    this.height = h;
+    this.originX = oX;
+    this.originY = oY;
+  }
+
+  // second constructor: 
+  public Rectangle(double width, double height) { //allows us to instatiate a rectangle without providing origin coords
+    this(width, height, 0, 0);
+  }
+
+  // third constructor: 
+  public Rectangle() {
+    this(1,1,0,0);
   }
 
   // method: move the rectangle
   public void move(double dx, double dy) {
-	   originX += dx;
-	   originY += dy;
+	  this.originX += dx;
+	  this.originY += dy;
   }
 
   // method: compute the area of the rectangle
   public double getArea() {
-    return width * height;
+    return this.width * this.height;
   }
   
   // method: compute the area of the rectangle
   public double getPerimeter() {
-    return 2 * (width + height);
+    return 2 * (this.width + this.height);
   }
   
 }
